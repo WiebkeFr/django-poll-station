@@ -2,15 +2,17 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <title>Current Polls</title>
+    <title>Polling Station</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
   </head>
   <body>
-    <h1>{{ question.question_text }}</h1>
-    <ul>
+    <h1>Polling Results: {{ question.question_text }}</h1>
+    <table>
         {% for choice in question.choice_set.all|dictsortreversed:"votes" %}
-            <li>{{ choice.choice_text }} - {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+            <tr><th>{{ choice.choice_text }}</th><th>{{ choice.votes }} vote{{ choice.votes|pluralize }}</th></tr>
         {% endfor %}
-    </ul>
-    <a href="{% url 'polls:index' %}">Go to Dashboard</a>
+    </table>
+    <a class="back-to-dashboard" href="{% url 'polls:index' %}">Go to Dashboard</a>
   </body>
 </html>

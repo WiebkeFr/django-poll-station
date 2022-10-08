@@ -1,0 +1,102 @@
+body {
+    font-family: Canva Sans,Noto Sans Variable,Noto Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
+    background: #D0DBDE;
+    margin: 0px;
+    padding: 32px 20%;
+    color: black;
+}
+
+h1 {
+    margin: 40px;
+}
+
+hl {
+    list-style: none;
+}
+
+ul {
+    padding: 0px;
+    position: relative;
+}
+
+li {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px #a7b0b3;
+    list-style: none;
+    transition-duration: .5s;
+    margin: 24px 0px;
+}
+
+li:hover {
+    box-shadow: 5px 7px 10px #a7b0b3;
+    margin: 24px -10px;
+}
+
+a {
+    display: block;
+    color: unset;
+    text-decoration: none;
+    padding: 32px;
+}
+
+fieldset {
+    margin: 16px 0px;
+    padding: 16px;
+}
+
+label {
+    display: inline-block;
+    margin: 4px;
+    font-size: 16px;
+}
+
+input[type=submit] {
+    margin: 16px 0px;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type=submit]:hover {
+    background: white;
+}
+
+.back-to-dashboard {
+    background: #EFEFEF;
+    padding: 8px 24px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.back-to-dashboard:hover {
+    background: white;
+}
+
+.back-to-dashboard span {
+    padding-right: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+}
+
+tr {
+    border-bottom: 1px solid grey;
+}
+
+tr:last-child {
+    border: unset;
+}
+
+th {
+    padding: 16px;
+    text-align: left;
+    font-weight: normal;
+}
