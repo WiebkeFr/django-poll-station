@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 
+production = os.environ.get("PRODUCTION", 'False')
+print(production)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 print("BASE_DIR", BASE_DIR)
@@ -25,7 +28,10 @@ print("BASE_DIR", BASE_DIR)
 SECRET_KEY = 'django-insecure-j56b_3mij^o79tin33r3kbi%atb8t@_@d#u%^70u@gxbq_(#h3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+if production == 'True':
+    DEBUG = False
+else:
+    DEBUG= True
 
 ALLOWED_HOSTS = []
 
@@ -137,9 +143,8 @@ print("STATICFILES_DIRS", STATICFILES_DIRS)
 #  Add configuration for static files storage using whitenoise
 STATICFILES_STORAGE = 'whitenoise.django.CompressedManifestStaticFilesStorage'
 
-# prod_db  =  dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(prod_db)
 
 # Configure Django App for Heroku.
-import django_on_heroku
-django_on_heroku.settings(locals())
+if production == 'True':
+    import django_on_heroku
+    django_on_heroku.settings(locals())
