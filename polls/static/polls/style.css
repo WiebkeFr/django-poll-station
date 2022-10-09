@@ -1,9 +1,23 @@
 body {
     font-family: Canva Sans,Noto Sans Variable,Noto Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
     background: #D0DBDE;
-    margin: 0px;
-    padding: 32px 20%;
+    margin-top: 83px;
+    padding: 0px 20%;
     color: black;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+header a:hover {
+    text-decoration: underline;
+    text-underline-offset: 8px;
 }
 
 h1 {

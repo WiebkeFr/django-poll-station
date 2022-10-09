@@ -27,7 +27,7 @@ def result(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     choices = question.choice_set.all()
     summed_votes = sum([choice.votes for choice in choices])
-    updated_choices = [{"choice_text": choice.choice_text, "votes": choice.votes, "relative_votes": round(choice.votes / all_votes * 100)} for choice in choices]
+    updated_choices = [{"choice_text": choice.choice_text, "votes": choice.votes, "relative_votes": round(choice.votes / summed_votes * 100)} for choice in choices]
     return render(request, "polls/results.html", {"question": question, "choices": updated_choices})
 
 def vote(request, question_id):

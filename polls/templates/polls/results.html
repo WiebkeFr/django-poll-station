@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="{% static 'polls/style.css' %}">
     </head>
     <body>
+        <header>
+            <a class="go-to-admin" href="/admin">Login as Admin</a> 
+        </header>
         <h1>Polling Results: {{ question.question_text }}</h1>
         <table>
             {% for choice in choices %}
