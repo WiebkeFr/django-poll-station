@@ -96,7 +96,28 @@ tr:last-child {
 }
 
 th {
+    position: relative;
     padding: 16px;
     text-align: left;
     font-weight: normal;
+}
+
+.progress-wrapper {
+    background: white;
+    width: 100%;
+    height: 24px;
+    border: 1px #a7b0b3 solid;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: #dcdbdb;
+    width: var(--progress);
+    height: 100%;
+}
+
+.vote-wrapper {
+    width: 1%;
+    white-space: nowrap;
 }
