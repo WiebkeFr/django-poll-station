@@ -138,8 +138,8 @@ th {
 .relative-votes {
     position: absolute;
     margin: auto 5px;
-    top: 3px;
-    right: 4px;
+    top: 19px;
+    right: 20px;
 }
 
 .vote-wrapper {
