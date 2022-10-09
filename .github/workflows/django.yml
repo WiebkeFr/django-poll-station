@@ -27,4 +27,4 @@ jobs:
       run: |
         python manage.py test
     - name: Formatting
-        run: djlint . --check
+      run: djlint . --check

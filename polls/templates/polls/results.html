@@ -14,15 +14,17 @@
         <table>
             {% for choice in choices %}
                 <tr>
-                    <th>{{ choice.choice_text }}</th>
+                    <th class="choice-title-wrapper">{{ choice.choice_text }}</th>
                     <th>
                         <div class="progress-wrapper">
-                            <div class="progress-bar" style="--progress: {{ choice.relative_votes }}%"/></div>
-                        </th>
-                        <th class="vote-wrapper">{{ choice.votes }} vote{{ choice.votes|pluralize }}</th>
-                    </tr>
-                {% endfor %}
-            </table>
-            <a class="back-to-dashboard" href="{% url 'index' %}">Go to Dashboard</a>
-        </body>
-    </html>
+                            <div class="progress-bar" style="--progress: {{ choice.relative_votes }}%"></div>
+                            <div class="relative-votes">{{ choice.relative_votes }}%</div>
+                        </div>
+                    </th>
+                    <th class="vote-wrapper">{{ choice.votes }} vote{{ choice.votes|pluralize }}</th>
+                </tr>
+            {% endfor %}
+        </table>
+        <a class="back-to-dashboard" href="{% url 'index' %}">Go to Dashboard</a>
+    </body>
+</html>

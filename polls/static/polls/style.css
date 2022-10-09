@@ -125,10 +125,21 @@ th {
     overflow: hidden;
 }
 
+.choice-title-wrapper {
+    width: 40%;
+}
+
 .progress-bar {
     background: #dcdbdb;
     width: var(--progress);
     height: 100%;
+}
+
+.relative-votes {
+    position: absolute;
+    margin: auto 5px;
+    top: 3px;
+    right: 4px;
 }
 
 .vote-wrapper {
