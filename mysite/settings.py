@@ -140,11 +140,9 @@ print("STATIC_ROOT", STATIC_ROOT)
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'polls/static/')]
 print("STATICFILES_DIRS", STATICFILES_DIRS)
 
-#  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.django.CompressedManifestStaticFilesStorage'
-
-
 # Configure Django App for Heroku.
 if production == 'True':
+    #  Add configuration for static files storage using whitenoise
+    STATICFILES_STORAGE = 'whitenoise.django.CompressedManifestStaticFilesStorage'
     import django_on_heroku
     django_on_heroku.settings(locals())
