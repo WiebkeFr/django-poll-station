@@ -8,22 +8,21 @@
     </head>
     <body>
         <header>
-            <a class="go-to-admin" href="/admin">Login as Admin</a> 
+            <a class="go-to-admin" href="/admin">Login as Admin</a>
         </header>
         <h1>Polling Results: {{ question.question_text }}</h1>
         <table>
             {% for choice in choices %}
-                    <tr>
-                        <th>{{ choice.choice_text }}</th>
-                        <th>
-                            <div class="progress-wrapper">
-                            <div class="progress-bar" style="--progress: {{ choice.relative_votes }}%"/>
-                            </div>
+                <tr>
+                    <th>{{ choice.choice_text }}</th>
+                    <th>
+                        <div class="progress-wrapper">
+                            <div class="progress-bar" style="--progress: {{ choice.relative_votes }}%"/></div>
                         </th>
                         <th class="vote-wrapper">{{ choice.votes }} vote{{ choice.votes|pluralize }}</th>
                     </tr>
-            {% endfor %}
-        </table>
-        <a class="back-to-dashboard" href="{% url 'index' %}">Go to Dashboard</a> 
-    </body>
-</html>
+                {% endfor %}
+            </table>
+            <a class="back-to-dashboard" href="{% url 'index' %}">Go to Dashboard</a>
+        </body>
+    </html>
